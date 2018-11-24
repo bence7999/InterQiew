@@ -1,0 +1,88 @@
+- anonimus function (lambda function):
+	- One of the most exciting features of C++11 is ability to create lambda functions (sometimes referred to as closures).
+- Lambda expressions: https://en.cppreference.com/w/cpp/language/lambda
+	- Constructs a closure: an unnamed function object capable of capturing variables in scope.
+- functor
+- virtual destructor
+- template class
+- Memory management
+- Compile time vs runtime
+- Polymorphism and virtual functions: https://www.geeksforgeeks.org/virtual-functions-and-runtime-polymorphism-in-c-set-1-introduction/
+	- The idea is, virtual functions are called according to the type of object pointed or referred, not according to the type of pointer or reference. 
+	  In other words, virtual functions are resolved late, at runtime. 
+- Runtime Polymorphism VS. Compile time Polymorphism
+	- In Compile time Polymorphism, call is resolved by the compiler.									- In Run time Polymorphism, call is not resolved by the compiler.
+	- It is also known as Static binding, Early binding and overloading as well.						- It is also known as Dynamic binding, Late binding and overriding as well.
+	- Overloading is compile time polymorphism where more than one methods share the same name 			- Overriding is run time polymorphism having same method with same parameters or	
+	  with different parameters or signature and different return type. 								  signature, but associated in a class & its subclass.
+	- It is achieved by function overloading and operator overloading.									- It is achieved by virtual functions and pointers.
+	- It provides fast execution because known early at compile time.									- It provides slow execution as compare to early binding because it is known at runtime.
+	- Compile time polymorphism is less flexible as all things execute at compile time.					- Run time polymorphism is more flexible as all things execute at run time.
+- Virtual functions: https://www.geeksforgeeks.org/virtual-function-cpp/							   	  
+- Virtual Inheritence
+- Multiple Inheritence: https://www.geeksforgeeks.org/multiple-inheritance-in-c/
+- std::set: Sets are containers that store unique elements following a specific order. -> default: ASC
+- std::mem_fn: 
+	- Convert member function to function object: Returns a function object whose functional call invokes the member function pointed by pm.
+- sort: https://www.gamedev.net/forums/topic/643237-stdsort-vs-listsort/
+- std::stable_sort: http://www.cplusplus.com/reference/algorithm/stable_sort/
+	- Sorts the elements in the range [first, last) in ascending order. The order of equivalent elements is guaranteed to be preserved. 
+- std::count_if: http://www.cplusplus.com/reference/algorithm/count_if/
+	- Returns the number of elements in the range [first,last) for which pred is true.
+- std::move: https://en.cppreference.com/w/cpp/algorithm/move
+	- std::move is used to indicate that an object t may be "moved from", i.e. allowing the efficient transfer of resources from t to another object.
+	- In particular, std::move produces an xvalue expression that identifies its argument t. It is exactly equivalent to a static_cast to an rvalue reference type. 
+- unique_ptr: https://en.cppreference.com/w/cpp/memory/unique_ptr
+	- std::unique_ptr is a smart pointer that owns and manages another object through a pointer and disposes of that object when the unique_ptr goes out of scope.
+	- 
+- dynamic_cast: https://en.cppreference.com/w/cpp/language/dynamic_cast
+	- Safely converts pointers and references to classes up, down, and sideways along the inheritance hierarchy. 
+- static_cast: 
+	- The static_cast operator converts a given expression to a specified type.	
+	- static_cast can perform conversions between pointers to related classes, not only upcasts (from pointer-to-derived to pointer-to-base), but also downcasts (from pointer-to-base to pointer-to-derived). 
+	  No checks are performed during runtime to guarantee that the object being converted is in fact a full object of the destination type. 
+	  Therefore, it is up to the programmer to ensure that the conversion is safe. On the other side, it does not incur the overhead of the type-safety checks of dynamic_cast.
+- std::unique: http://www.cplusplus.com/reference/algorithm/unique/
+	- Removes all but the first element from every consecutive group of equivalent elements in the range [first,last).
+- reinterpret_cast: https://en.cppreference.com/w/cpp/language/reinterpret_cast | https://www.geeksforgeeks.org/reinterpret_cast-in-c-type-casting-operators/
+	- Converts between types by reinterpreting the underlying bit pattern. 
+	- It is used to convert one pointer of another pointer of any type, no matter either the class is related to each other or not.
+    - It does not check if the pointer type and data pointed by the pointer is same or not.
+- operator new: http://www.cplusplus.com/reference/new/operator%20new/
+	- Default allocation functions (single-object form).
+- Template:
+	- Function templates:
+		- Function templates are special functions that can operate with generic types. 
+		  This allows us to create a function template whose functionality can be adapted to more than one type or class without repeating the entire code for each type.
+	- Class templates:
+		- We also have the possibility to write class templates, so that a class can have members that use template parameters as types.
+	- Member templates: https://en.cppreference.com/w/cpp/language/member_template
+		- Template declarations (class, function, and variables (since C++14)) can appear inside a member specification of any class, struct, or union that aren't local classes.
+- inline: https://en.cppreference.com/w/cpp/language/inline | https://en.cppreference.com/w/c/language/inline
+	- The inline specifier, when used in a function's decl-specifier-seq, declares the function to be an inline function.
+	- A function defined entirely inside a class/struct/union definition, whether it's a member function or a non-member friend function, is implicitly an inline function.
+- const_reverse_iterator:
+	- Returns a reverse iterator pointing to the last element in the vector (i.e., its reverse beginning).
+	- Reverse iterators iterate backwards: increasing them moves them towards the beginning of the container.
+	- rbegin points to the element right before the one that would be pointed to by member end.
+- adjacent_find: 
+	- Searches the range [first,last) for the first occurrence of two consecutive elements that match, and returns an iterator to the first of these two elements, or last if no such pair is found.
+	- 
+- std::greater: 
+	-  
+- std::function
+	- Class template std::function is a general-purpose polymorphic function wrapper. 
+	- Instances of std::function can store, copy, and invoke any Callable target -- functions, lambda expressions, bind expressions, or other function objects, as well as pointers to member functions and pointers to data members. 
+- value_type: The value_type allows the templated function to use the same 'type' of value that the tempate parameter uses.
+- Function call operator: https://www.tutorialspoint.com/cplusplus/function_call_operator_overloading.htm
+	- 
+- User - defined conversion: https://en.cppreference.com/w/cpp/language/cast_operator
+	- Conversion function is declared like a non-static member function or member function template with no parameters, no explicit return type, and with the name of the form: 
+- explicit (specifier): https://en.cppreference.com/w/cpp/language/explicit
+	- contextually converted constant expression of type bool
+- Copy assignment operator: https://en.cppreference.com/w/cpp/language/copy_assignment
+	- A copy assignment operator of class T is a non-template non-static member function with the name operator= that takes exactly one parameter of type T, T&, const T&, volatile T&, or const volatile T&. 
+	  For a type to be CopyAssignable, it must have a public copy assignment operator. 
+- difference between new char[10] and new char(10)
+	- The first allocates an array of 10 char's. 												- The second allocates one char initialized to 10.
+	- The first should be replaced with std::vector<char>										- The second should be placed into a smart pointer.
