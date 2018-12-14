@@ -1,0 +1,48 @@
+Examples:
+	- functor:
+		class increment 
+		{ 
+		private: 
+			int num; 
+		public: 
+			increment(int n) : num(n) {  } 
+			
+			// This operator overloading enables calling 
+			// operator function () on objects of increment 
+			int operator () (int arr_num) const { 
+				return num + arr_num; 
+			} 
+		}; 
+		
+		int main()
+		{
+			auto a = increment(3);
+			cout << a(5) << " " << a(0) << endl; // 8 3
+		}
+	- virtual destructor:
+		class base { 
+		  public: 
+			base()      
+			{ cout<<"Constructing base \n"; } 
+			virtual ~base() 
+			{ cout<<"Destructing base \n"; }      
+		}; 
+		  
+		class derived: public base { 
+		  public: 
+			derived()      
+			{ cout<<"Constructing derived \n"; } 
+			~derived() 
+			{ cout<<"Destructing derived \n"; } 
+		}; 
+		  
+		int main(void) 
+		{ 
+		  derived *d = new derived();   
+		  base *b = d; 
+		  delete b; 
+		  getchar(); 
+		  return 0; 
+		} // Constructing base \n Constructing derived \n Destructing derived \n Destructing base
+	- 
+  
